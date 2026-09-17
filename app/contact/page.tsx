@@ -28,10 +28,10 @@ export default function ContactPage() {
                             📱 +421 905 556 810
                         </a>
                         <a
-                            href="mailto:info@konig-real.sk"
+                            href="mailto:konig@konig-real.sk"
                             className="block text-yellow-600 font-semibold hover:underline"
                         >
-                            ✉️ info@konig-real.sk
+                            ✉️ konig@konig-real.sk
                         </a>
                     </div>
 
