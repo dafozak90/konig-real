@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { supabase } from "../lib/supabase";
 import Link from "next/link";
 
@@ -5,7 +7,8 @@ export default async function Home() {
     const { data: properties, error } = await supabase
     .from("properties")
     .select("*")
-    .limit(3);
+    .order("created_at", { ascending: false })
+   .limit(3);
 
     return (
         <>
