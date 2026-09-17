@@ -14,6 +14,11 @@ export default async function PropertyDetail({
      .select("*")
      .eq("id", Number(id))
      .single();
+     const { data: gallery } = await supabase
+     .from("property_images")
+     .select("*")
+     .eq("property_id", Number(id))
+     .order("position");
 
  if (error) {
     return <div>Chyba: {error.message}</div>;
@@ -29,7 +34,20 @@ export default async function PropertyDetail({
             src={property.image_url}
             alt={property.title}
             className="w-full h-[500px] object-cover rounded-3xl shadow-lg"
-        />
+                />
+
+                {gallery && gallery.length > 1 && (
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+                        {gallery.map((image) => (
+                            <img
+                                key={image.id}
+                                src={image.image_url}
+                                alt={property.title}
+                                className="w-full h-48 object-cover rounded-xl"
+                            />
+                        ))}
+                    </div>
+                )}
 
        <div className="mt-8">
             <h1 className="text-5xl font-bold"> 
