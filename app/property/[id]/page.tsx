@@ -1,6 +1,7 @@
 export const dynamic = "force-dynamic";
 import { supabase } from "../../../lib/supabase";
 import { notFound } from "next/navigation";
+import PropertyGallery from "./PropertyGallery";
 
 export default async function PropertyDetail({
     params,
@@ -28,6 +29,8 @@ export default async function PropertyDetail({
     return <div>Nehnuteľnosť nebola nájdená</div>; 
  }  
 
+    const images =
+  gallery?.map((img) => img.image_url) || [];
  return (
     <main className="max-w-6xl mx-auto p-8">
        <img
