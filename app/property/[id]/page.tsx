@@ -33,24 +33,10 @@ export default async function PropertyDetail({
   gallery?.map((img) => img.image_url) || [];
  return (
     <main className="max-w-6xl mx-auto p-8">
-       <img
-            src={property.image_url}
-            alt={property.title}
-            className="w-full h-[500px] object-cover rounded-3xl shadow-lg"
-                />
-
-                {gallery && gallery.length > 1 && (
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
-                        {gallery.map((image) => (
-                            <img
-                                key={image.id}
-                                src={image.image_url}
-                                alt={property.title}
-                                className="w-full h-48 object-cover rounded-xl"
-                            />
-                        ))}
-                    </div>
-                )}
+       <PropertyGallery
+  images={images}
+  title={property.title}
+/>  
 
        <div className="mt-8">
             <h1 className="text-5xl font-bold"> 
