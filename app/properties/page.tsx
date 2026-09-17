@@ -12,15 +12,6 @@ export default async function PropertiesPage() {
     if (error) {
         return <div>Chyba: {error.message}</div>;
     }
-    return (
-2
-<pre>
-3
-{JSON.stringify(properties, null, 2)}
-4
-</pre>
-5
-);
 
     return (
         <main className="max-w-6xl mx-auto p-8">
