@@ -16,14 +16,26 @@ export default function ContactPage() {
                             📍 Bratislava, Slovensko
                         </p>
 
-                        <p className="mb-3">
-                            📞 +421 908 131 522
-                            📞 +421 905 556 810
-                        </p>
+                        <a
+                            href="tel:+421908131522"
+                            className="text-yellow-600 font-semibold hover:underline"
+                        >
+                             +421 908 131 522
+                        </a>
 
-                        <p className="mb-3">
-                            ✉️ konig@konig-real.sk
-                        </p>
+                        <a
+                            href="tel:+421905556810"
+                            className="text-yellow-600 font-semibold hover:underline"
+                        >
+                             +421 905 556 810
+                        </a>
+
+                        <a
+                            href="mailto:info@konig-real.sk"
+                            className="text-yellow-600 font-semibold hover:underline"
+                        >
+                            info@konig-real.sk
+                        </a>
                     </div>
 
                     <form className="space-y-4">
